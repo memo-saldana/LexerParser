@@ -20,10 +20,25 @@ class Token:
 
   def getType(self):
     return self.type
+  
+  def getTypeString(self):
+    if self.type == 0:
+      return "INTEGER"
+    elif self.type == 1:
+      return "REGISTER"
+    elif self.type == 2:
+      return "ASSIGNMENT"
+    elif self.type == 3:
+      return "OPERATION"
+    elif self.type == 4:
+      return "EOF"
+    return ""
+
+
 
   def equalsToken(self, token):
     if (len(token.value) > 0):
-      return (self.type == token.type and self.value== token.value)
+      return (self.type == token.type and self.value == token.value)
     else:
       return (self.type == token.type)
 

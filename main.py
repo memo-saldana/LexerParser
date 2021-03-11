@@ -6,7 +6,11 @@ def main():
   test = "MOV 2354 #A MOV #A #C SUM #A #B ;"
   
   tokens = lexer.scan(test)
+
   print([t.value for t in tokens])
+
+  for token in tokens:
+    print ("<" + token.getTypeString() + ", " + token.value + ">")
 
   parser = Parser()
   parser.parse(tokens)
