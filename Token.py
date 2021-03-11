@@ -17,3 +17,13 @@ class Token:
 
   def __str__(self):
     return self.value
+
+  def getType(self):
+    return self.type
+
+  def equalsToken(self, token):
+    if (len(token.value) > 0):
+      return (self.type == token.type and self.value== token.value)
+    else:
+      return (self.type == token.type)
+

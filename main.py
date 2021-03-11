@@ -1,4 +1,5 @@
 from Lexer import Lexer
+from Parser import Parser
 
 def main():
   lexer = Lexer()
@@ -6,6 +7,11 @@ def main():
   
   tokens = lexer.scan(test)
   print([t.value for t in tokens])
+
+  parser = Parser()
+  parser.parse(tokens)
+
+
 
 if __name__ == "__main__":
     main()
